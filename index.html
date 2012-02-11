@@ -1,11 +1,25 @@
 ---
 layout: default
-title: Peter Jihoon Kim's Blog
 ---
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+{% for post in site.posts limit: 10 %}
+  <article>
+    <header>
+      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    </header>
+    <aside>
+      <p class='date'>{{ post.date | date: "%A, %B %-d, %Y" }}</p>
+      <p class='location'>{{ post.location }}</p>
+    </aside>
+    {{ post.content }}
+    <footer>
+      <a href="{{ post.url }}#disqus_thread">Comments</a>
+      <div class='social_buttons'>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.raingrove.com{{ post.url }}" data-text="{{ post.title }} - raingrove.com" data-via="raingrove" data-related="raingrove">Tweet</a>
+        <div class="fb-like" data-href="http://www.raingrove.com{{ post.url }}" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false"></div>
+        <div class="g-plusone" data-size="medium" data-href="http://www.raingrove.com{{ post.url }}"></div>
+      </div>
+    </footer>
+  </article>
+{% endfor %}
 

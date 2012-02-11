@@ -2,30 +2,84 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>{{ page.title }}</title>
+  <title>{% if page.title %}{{ page.title }} - {% endif %}raingrove.com by Peter Jihoon Kim</title>
   <meta name="author" content="Peter Jihoon Kim" />
-  <!--<link href="http://feeds.feedburner.com/raingrove" rel="alternate" title="Peter Jihoon Kim" type="application/atom+xml" />-->
+  <!--[if IE lt 9]>
+    <script type='text/javascript' src='http://html5shim.googlecode.com/svn/trunk/html5.js' />
+  <![endif-->
   <link rel="stylesheet" href="/stylesheets/highlight.css" type="text/css" media="screen" />
+  <link href="http://feeds.feedburner.com/raingrove" rel="alternate" title="raingrove.com by Peter Jihoon Kim" type="application/atom+xml" />
 </head>
 <body>
   <header>
-    <h3><a href="/">Peter Jihoon Kim&#39;s Blog</a></h3>
+    <h3><a href="/">raingrove.com</a></h3>
   </header>
-  <p>Site is WIP...</p>
-  <div class="container">
+  <div class='content'>
     {{ content }}
   </div>
+  <div class='sidebar'>
+    <p>By Peter Jihoon Kim</p>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/archives.html">Archives</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="http://twitter.com/raingrove">Twitter</a></li>
+        <li><a href="http://github.com/petejkim">GitHub</a></li>
+        <li><a href="http://feeds.feedburner.com/raingrove">RSS</a></li>
+      </ul>
+    </nav>
+  </div>
   <footer>
-    <ul>
-      <li><a href="http://github.com/petejkim/">github.com/petejkim</a></li>
-      <li><a href="http://twitter.com/raingrove/">twitter.com/raingrove</a></li>
-    </ul>
-    <div class="rss">
-      <!--<a href="http://feeds.feedburner.com/raingrove">-->
-        <!--<img src="/images/rss.png" alt="Subscribe to RSS Feed" />-->
-      <!--</a>-->
-    </div>
+    <p class='author'>
+    <p class='license'>
+      Except where otherwise noted, the content on this site is licensed under a
+      <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>.
+    <p>
   </footer>
+  <div class='scripts'>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29125021-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=110025642455782";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+      var disqus_shortname = 'raingrove';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    </script>
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+  </div>
 </body>
 </html>
 

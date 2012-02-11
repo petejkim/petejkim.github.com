@@ -1,11 +1,29 @@
 ---
 layout: default
 ---
-<div id="post">
-{{ content }}
-</div>
+<article>
+  <header>
+    <h1>{{ page.title }}</h1>
+  </header>
+  <aside>
+    <p class='date'>{{ page.date | date: "%A, %B %-d, %Y" }}</p>
+    <p class='location'>{{ page.location }}</p>
+  </aside>
+  {{ content }}
+  <footer id='comments'>
+    <div>
+      <p>Enjoyed this post? You should follow me on Twitter: <a href='http://twitter.com/raingrove'>@raingrove</a></p>
+      <div class='social_buttons'>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.raingrove.com{{ page.url }}" data-text="{{ page.title }} - raingrove.com" data-via="raingrove" data-related="raingrove">Tweet</a>
+        <div class="fb-like" data-href="http://www.raingrove.com{{ page.url }}" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false"></div>
+      </div>
+      <div class="g-plusone" data-size="medium" data-href="http://www.raingrove.com{{ page.url }}"></div>
+    </div>
+    <div id='disqus_thread'></div>
+  </footer>
+</article>
 
-<ul class="posts">
+<ul class='related_posts'>
   {% for post in site.related_posts limit:3 %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
