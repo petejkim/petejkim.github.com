@@ -2,24 +2,33 @@
 layout: default
 ---
 
-{% for post in site.posts limit: 10 %}
-  <article>
-    <header>
-      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    </header>
-    <aside>
-      <p class='date'>{{ post.date | date: "%A, %B %-d, %Y" }}</p>
-      <p class='location'>{{ post.location }}</p>
-    </aside>
-    {{ post.content }}
-    <footer>
-      <a href="{{ post.url }}#disqus_thread">Comments</a>
-      <div class='social_buttons'>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.raingrove.com{{ post.url }}" data-text="{{ post.title }} - raingrove.com" data-via="raingrove" data-related="raingrove">Tweet</a>
-        <div class="fb-like" data-href="http://www.raingrove.com{{ post.url }}" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false"></div>
-        <div class="g-plusone" data-size="medium" data-href="http://www.raingrove.com{{ post.url }}"></div>
+<div class='page_index container'>
+  {% for post in site.posts limit: 10 %}
+    <article>
+      <header>
+        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      </header>
+      <aside>
+        <p class='date'>{{ post.date | date: "%A, %B %-d, %Y" }}</p>
+        <p class='location'>{{ post.location }}</p>
+      </aside>
+      <div class='article_body'>
+        {{ post.content }}
       </div>
-    </footer>
-  </article>
-{% endfor %}
-
+      <footer>
+        <a href="{{ post.url }}#disqus_thread">Comments</a>
+        <div class='social_buttons'>
+          <div class='twitter'>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.raingrove.com{{ post.url }}" data-text="{{ post.title }} - raingrove.com" data-via="raingrove" data-related="raingrove">Tweet</a>
+          </div>
+          <div class='gplus'>
+            <div class="g-plusone" data-size="medium" data-href="http://www.raingrove.com{{ post.url }}"></div>
+          </div>
+          <div class='fb'>
+            <div class="fb-like" data-href="http://www.raingrove.com{{ post.url }}" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false"></div>
+          </div>
+        </div>
+      </footer>
+    </article>
+  {% endfor %}
+</div>
