@@ -620,3 +620,8 @@ article blockquote {
     padding: 0 20px;
   }
 }
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+  * {
+    background-size: 32px 32px;
+  }
+}
