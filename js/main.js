@@ -7,6 +7,22 @@
     }
   };
 
-  $(window).resize(repositionFooter);
-  $(repositionFooter);
+  var repositionIntervalId = null;
+  var $disqusThread = null;
+
+  var repositionFooterIfDisqusIsLoaded = function() {
+    if($disqusThread.height() > 100) {
+      repositionFooter();
+      window.clearInterval(repositionIntervalId);
+    }
+  };
+
+  $(function() {
+    repositionFooter();
+    $(window).resize(repositionFooter);
+    $disqusThread = $('#disqus_thread');
+    if($disqusThread.length > 0) {
+      repositionIntervalId = window.setInterval(repositionFooterIfDisqusIsLoaded, 500);
+    }
+  });
 }());
