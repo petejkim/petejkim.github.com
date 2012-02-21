@@ -412,7 +412,7 @@ article .highlight pre {
   margin: 0;
 }
 article .highlight code {
-  font-size: 16px;
+  font-size: 14px;
 }
 article blockquote {
   margin: 0 0 0 15px;
@@ -487,9 +487,6 @@ article blockquote {
   .container {
     padding: 0 5px;
   }
-  .highlight code {
-    font-size: 14px;
-  }
   #sidebar {
     font-size: 15px;
   }
@@ -516,6 +513,9 @@ article blockquote {
   }
   article .article_body {
     font-size: 15px;
+  }
+  article .highlight code {
+    font-size: 12px;
   }
   article footer {
     font-size: 13px;
