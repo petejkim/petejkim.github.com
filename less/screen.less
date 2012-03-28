@@ -67,10 +67,6 @@ a {
     color: #ca7b66;
     border-bottom: 1px solid #ca7b66;
   }
-  .highlight code {
-    font-size: 14px;
-  }
-
 
   &:active {
   }
@@ -219,17 +215,34 @@ article {
     padding: 0 0 0 35px;
   }
 
-  .highlight {
+  code, .highlight {
+    background: #f8f8f8;
     border: 1px solid #ccc;
+    .border-radius(4px);
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-size: 14px;
+    padding: 2px 4px;
+  }
+
+  .highlight {
     padding: 8px 10px;
     margin: 0 0 1em 0;
 
-    pre {
-      margin: 0;
+    code {
+      background: none;
+      border: none;
+      padding: 0;
+      .border-radius(none);
     }
 
-    code {
-      font-size: 14px;
+    pre {
+      margin: 0;
     }
   }
 
@@ -347,7 +360,7 @@ article {
       font-size: 15px;
     }
 
-    .highlight code {
+    code {
       font-size: 12px;
     }
 
